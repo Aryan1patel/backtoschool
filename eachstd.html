@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Analysis</title>
+    <link rel="stylesheet" href="resultstyle.css">
+    <link rel="stylesheet" href="eachstyle.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="left-nav-menu">
+                <ul>
+                    <h2>Your LOGO</h2>
+                    <li id="li1">Home</li>
+                    <li id="li2">About</li>
+                    <li id="li3">Services</li>
+                </ul>
+            </div>
+            <div class="login-menu">
+                <button class="btn" id="login">login</button>
+                <button class="btn signup">sign up</button>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Student Analysis</h1>
+        
+        <div class="risk-level">
+            Dropout Risk: <span id="dropoutRisk"></span>
+        </div>
+        
+        <div class="risk-level">
+            Dropout Probability: <span id="dropoutProbability"></span>
+        </div>
+        
+        <div class="risk-factors">
+            <h2>Risk Factors:</h2>
+            <ul id="riskFactors"></ul>
+        </div>
+        
+        <div class="recommendations">
+            <h2>Recommendations:</h2>
+            <ul id="recommendations"></ul>
+        </div>
+    </div>
+
+    <script>
+        // This would typically be replaced with actual API call
+        const studentData = {
+            "analysis": {
+                "dropout_risk": "medium",
+                "dropout_probability": 0.6,
+                "risk_factors": [
+                    "Low Grades",
+                    "Low Extracurricular Involvement",
+                    "Low Parent Involvement",
+                    "Low Socioeconomic Status"
+                ],
+                "recommendations": [
+                    "Provide academic support and tutoring to improve grades",
+                    "Encourage participation in extracurricular activities to foster engagement and social connections",
+                    "Increase parent communication and involvement in the student's education",
+                    "Explore resources and support programs tailored for students from low socioeconomic backgrounds"
+                ]
+            }
+        };
+
+        document.getElementById('dropoutRisk').textContent = studentData.analysis.dropout_risk.toUpperCase();
+        document.getElementById('dropoutProbability').textContent = (studentData.analysis.dropout_probability * 100).toFixed(1) + '%';
+
+        const riskFactorsList = document.getElementById('riskFactors');
+        studentData.analysis.risk_factors.forEach(factor => {
+            const li = document.createElement('li');
+            li.textContent = factor;
+            riskFactorsList.appendChild(li);
+        });
+
+        const recommendationsList = document.getElementById('recommendations');
+        studentData.analysis.recommendations.forEach(recommendation => {
+            const li = document.createElement('li');
+            li.textContent = recommendation;
+            recommendationsList.appendChild(li);
+        });
+    </script>
+</body>
+</html>

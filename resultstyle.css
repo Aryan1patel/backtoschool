@@ -1,0 +1,305 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+
+:root {
+  /* colors */
+  --primary-100: #dfecff;
+  --primary-200: #c1beff;
+  --primary-300: #a29dff;
+  --primary-400: #837dff;
+  --primary-500: #645cff;
+  --primary-600: #504acc;
+  --primary-700: #3c3799;
+  --primary-800: #282566;
+  --primary-900: #141233;
+
+  /* grey */
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
+  /* rest of the colors */
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+
+  --small-text: 0.875rem;
+  --extra-small-text: 0.7em;
+  /* rest of the vars */
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-900);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+
+  /* box shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  color: white;
+  background-color: #f0f4ff;
+  /* background-color: var(--backgroundColor); */
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  margin: 2.5rem 5rem;
+}
+
+.navbar li {
+  color: white;
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 2rem;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.navbar li a {
+  color: white;
+  transition: all 0.5s;
+  font-weight: 100;
+}
+
+.navbar li a:hover {
+  color: #00f7ff;
+}
+
+.left-nav-menu {
+  background-color: #289fef;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+}
+
+#li1 {
+  margin-left: 6rem;
+}
+
+.login-menu {
+  display: flex;
+  align-items: center;
+  margin-left: 15rem;
+}
+
+#login {
+  font-size: 1.05rem;
+  font-weight: 800;
+  background: none;
+  border: none;
+  color: #289fef;
+}
+
+.signup {
+  color: white;
+  margin: 0 2.3rem 0 2.3rem;
+  background-color: #289fef;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 1.5rem;
+}
+
+.fa-solid {
+  color: rgb(77, 77, 77);
+  font-size: 1.7rem;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .animated-icon {
+    font-size: 2rem;
+    color: rgb(255, 70, 70);
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  /* Keyframes for pulsing effect with reduced scale */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      /* Original size */
+    }
+  
+    50% {
+      transform: scale(1.3);
+      /* 1.2 times bigger (reduced from 1.5) */
+    }
+  
+    100% {
+      transform: scale(1);
+      /* Back to original size */
+    }
+  }
+
+
+  /* Container for the result bars */
+  .result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%; /* or any desired width */
+    max-width: 1200px; /* Optional: Maximum width */
+    margin-bottom: 10px;
+}
+
+/* Individual student result row */
+.student-result {
+    background-color: var(--primary-100);
+    width: 100%; /* Ensure it takes full width of the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-2);
+    transition: var(--transition);
+}
+
+/* Styling for the student name */
+.student-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-800);
+}
+
+/* Styling for the dropout percentage */
+.dropout-percentage {
+    background-color: var(--primary-500);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+}
+
+/* Hover effect for each result row */
+.student-result:hover {
+    background-color: var(--primary-200);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-3);
+}
+
+/* Ensure the body has margin for proper spacing */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--backgroundColor);
+}
+
+/* Style for the result header */
+.result-header {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.result-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-500);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+.result-header h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 50%;
+    height: 4px;
+    background: var(--primary-500);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Result container styles */
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.student-result {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+.student-result a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.student-name {
+    font-weight: bold;
+}
+
+.dropout-percentage {
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.percentage-sign {
+    margin-left: 5px;
+}
+
+
+
+
+

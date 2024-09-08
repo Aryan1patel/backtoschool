@@ -1,0 +1,185 @@
+/* General Reset */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root Variables */
+:root {
+  /* colors */
+  --primary-100: #dfecff;
+  --primary-200: #c1beff;
+  --primary-300: #a29dff;
+  --primary-400: #837dff;
+  --primary-500: #645cff;
+  --primary-600: #504acc;
+  --primary-700: #3c3799;
+  --primary-800: #282566;
+  --primary-900: #141233;
+
+  /* grey */
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
+  
+  /* additional colors */
+  --black: #222;
+  --white: #fff;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+
+  /* Typography */
+  --small-text: 0.875rem;
+  --extra-small-text: 0.7em;
+
+  /* General styles */
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-900);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+
+  /* box shadows */
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Styling for content */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+h1 {
+    color: var(--primary-500);
+    text-align: center;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 4px;
+    background-color: var(--primary-500);
+    border-radius: 2px;
+}
+.risk-level, .risk-factors, .recommendations {
+    background-color: var(--primary-100);
+    margin: 1.5rem 0;
+}
+.risk-level {
+    font-size: 1.5rem;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--primary-100);
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+.risk-factors, .recommendations {
+    background-color: var(--primary-100);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    color: var(--primary-500)
+}
+
+/* Updated Styling for Risk Factors and Recommendations */
+.risk-factors, .recommendations {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+/* Headings for each section */
+.risk-factors h2, .recommendations h2 {
+    color: var(--primary-500);
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    position: relative;
+}
+
+/* Add an underline to headings for better visuals */
+.risk-factors h2::after, .recommendations h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    background-color: var(--primary-500);
+    border-radius: 2px;
+}
+
+/* List styling for factors and recommendations */
+.risk-factors ul, .recommendations ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.risk-factors ul li, .recommendations ul li {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    color: var(--grey-800);
+}
+
+/* Adding icons or bullets to enhance readability */
+.risk-factors ul li::before{
+    content: '✘'; /* Or use an icon from a font library */
+    font-size: 1.2rem;
+    color: red;
+    margin-right: 0.75rem;
+}
+.recommendations ul li::before {
+    content: '✔'; /* Or use an icon from a font library */
+    font-size: 1.2rem;
+    color: rgb(0, 178, 0);
+    margin-right: 0.75rem;
+}
+
+/* Add spacing between the sections */
+.risk-level, .risk-factors, .recommendations {
+    margin-bottom: 2.5rem;
+}
+
+/* Add space between lines */
+.risk-factors ul li, .recommendations ul li {
+    padding: 0.5rem 0;
+}

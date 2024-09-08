@@ -1,0 +1,136 @@
+/* General Reset */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root Variables */
+:root {
+  --primary-500: #645cff;
+  --primary-600: #504acc;
+  --grey-900: #0f172a;
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-300: #cbd5e1;
+  --borderRadius: 0.5rem;
+  --transition: 0.3s ease-in-out;
+  --shadow-1: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0px 6px 20px rgba(100, 92, 255, 0.2);
+}
+
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--grey-50);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+  background-color: white;
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-1);
+  width: 80%;
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  transition: var(--transition);
+  border: 1px solid var(--grey-300); /* Border for visible outline */
+}
+
+.container:hover {
+  box-shadow: var(--shadow-hover);
+  transform: scale(1.02); /* Subtle hover effect on the form */
+}
+
+/* Form Header */
+h1 {
+  text-align: center;
+  color: var(--primary-500);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 4px;
+  background-color: var(--primary-500);
+  border-radius: 2px;
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--grey-900);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--borderRadius);
+  border: 1px solid var(--grey-300);
+  font-size: 1rem;
+  color: var(--grey-900);
+  transition: var(--transition);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 8px rgba(100, 92, 255, 0.5);
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--borderRadius);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-1);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-600);
+  box-shadow: var(--shadow-hover); /* Adds hover shadow effect */
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98); /* Subtle shrink on click */
+}
+
+/* Extra styling for input hover effect */
+.form-group input:hover,
+.form-group select:hover {
+  border-color: var(--grey-900);
+  transition: var(--transition);
+}
